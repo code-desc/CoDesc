@@ -12,6 +12,7 @@ This is the public release of code, data and pretrained models of our paper titl
 - [Introduction](#introduction)
 - [Dataset](#data)
 - [Licenses](#licenses)
+- [Code Search](#code-search)
 
 <!-- /TOC -->
 
@@ -27,16 +28,43 @@ This is the public release of code, data and pretrained models of our paper titl
 
   # setup
   ./Setup/setup.sh
-  
   ```
 
 # Introduction
-
 This is a sample intro.
 
 
 # Dataset
-This section describes our dataset.
+After initial setup described at [Quickstart](#quickstart), our dataset will be downloaded at `data/` folder along with preprocessed data for code search task and code summarization task. We also provide the source datasets here. Following are the links and descriptions of the dataset and preprocessed data.
+
+1. [CodeCorpus](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U): This file contains our 4.2m dataset. The description of this dataset is given in our paper.
+
+2. [Original_data](https://mega.nz/file/ZpoBla5a#qeSxMXP6v-2FEI237cIVrFhuqnq5DHh88_EKuReSY3k): This file contains the source data from where we have collected and preprocessed our 4.2m dataset.
+
+3. [CSN_preprocessed_data](https://mega.nz/file/Q4oxQCIb#CT7P5zq1WbiWOLTeafg-mFD2QZEmF1YwZmDhGZkzU90): This file contains the preprocessed data for CodeSearchNet challenge. Here test and validation sets are the preprocessed datapoints from CodeSearchNet original test and validation sets.
+
+4. [CSN_preprocessed_data_balanced_partition](https://mega.nz/file/t543VCyA#4BLjB28yYNDT9kXBs6NWmY1ADOCMyuvqDXLg9yPhiaI): This file contains the preprocessed data for CodeSearchNet networks. Here train, test, and validation sets are from our balanced partition described in our paper
+
+5. [NCS_preprocessed_data](https://mega.nz/file/Npo1RaBZ#ug6jJPacpjNht537PmOwxsR2MlOps0Y-LOwhx8lQ5ys): This file contains the preprocessed data for neural code summarization networks.
+
+
+# Code Search
+After initial setup described at [Quickstart](#quickstart), a forked version of [CodeSearchNet](https://github.com/code-description2020/CodeSearchNet.git) is cloned and preprocessed data of CodeCorpus will be copied to `CodeSearchNet/resources/data/`. To use the preprocessed dataset of balanced partition, clear the above mentioned folder, and copy the content inside of `data/csn_preprocessed_data_balanced_partition/` into it.
+
+Then the following commands will train and test code search networks:
+ ```bash
+ cd CodeSearchNet/
+ 
+ script/console
+ wandb login
+ 
+ python train.py --model neuralbowmodel --run-name nbow_codecorpus
+ python train.py --model rnnmodel --run-name rnn_codecorpus
+ python train.py --model selfattentionmodel --run-name attn_codecorpus
+ python train.py --model convolutionalmodel --run-name conv_codecorpus
+ python train.py --model convselfattentionmodel --run-name convattn_codecorpus
+ ```
+
 
 # Licenses
 Codes, dataset and models from [CodeSearchNet](https://github.com/github/CodeSearchNet.git), and [NeuralCodeSum](https://github.com/wasiahmad/NeuralCodeSum.git) are used with the licenses provided at their respective repositories.   
