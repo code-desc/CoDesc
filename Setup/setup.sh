@@ -3,7 +3,7 @@ sudo apt-get install curl
 sudo apt-get install p7zip
 
 # install docker
-sudo ./setup/install_docker.sh
+./setup/install_docker.sh
 
 # setup python environment
 pip install --upgrade pip
@@ -20,7 +20,7 @@ python Setup/Download_data.py
 
 # setup CodeSearchNet
 git clone https://github.com/code-description2020/CodeSearchNet.git
-!sudo cp -rf -t CodeSearchNet/resources/data/ data/sample_data/csn_preprocessed_data/java/
+sudo cp -rf -t CodeSearchNet/resources/data/ data/sample_data/csn_preprocessed_data/java/
 cd CodeSearchNet/
 script/setup
 cd ..
