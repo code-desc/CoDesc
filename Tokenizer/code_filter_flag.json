@@ -1,0 +1,40 @@
+{
+    "__comment": "when a code is removed CodePreprocess will return empty string",
+
+    "tokenize and remove_comments": "true", 
+
+    "remove_escape_charaters": "true",
+
+    "subtokenize_camel_case": "true",  
+
+    "subtokenize_snake_case": "true", 
+
+    "subtokenize_str_int_str": "true",
+
+    "_comment_replace_string_literal_with": "put None if you don't want to replace",
+    "replace_string_literal_with": "STRING",
+
+    "_comment_replace_int_literal_with": "put None if you don't want to replace",
+    "replace_int_literal_with": "NUM", 
+
+    "_comment_replace_float_literal_with": "put None if you don't want to replace",
+    "replace_float_literal_with": "NUM", 
+
+    "_comment_replace_bool_literal_with": "put None if you don't want to replace",
+    "replace_bool_literal_with": "BOOL",
+
+    "remove_non_ascii": "true", 
+
+    "delete_when_total_token_is_less_than": 3, 
+    
+    "maximum_code_length": 100000,
+    
+    "maximum_token_for_getter_method": 20,
+    "remove_getter_methods": "true",
+    
+    "maximum_token_for_setter_method": 20,
+    "remove_setter_methods": "true",
+    
+    "maximum_token_for_tester_method": 30,
+    "remove_tester_methods": "true"
+}

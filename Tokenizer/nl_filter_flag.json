@@ -1,0 +1,44 @@
+{
+    "__comment": "when a nl is removed NLPreprocess will return empty string",
+
+    "to_lower_case": "true",
+
+    "_comment_tokenize": "this puts space on both side of non alphaneumeric character",
+    "tokenize": "true",
+
+    "_comment_remove_escape_charaters": "this removes newline, tab and extra spaces",
+    "remove_escape_charaters": "true",
+
+    "subtokenize_camel_case": "true",
+
+    "subtokenize_snake_case": "true",
+
+    "_comment_subtokenize_str_int_str": "this converts abc123 _ abc 123, abc123cd -> abc 123 cd, J1Bag -> J1 Bag etc",
+    "subtokenize_str_int_str": "true",
+
+    "_tokens_parameter_return_throws_info": ["@param", "@return", "@throws"],
+    "remove_parameter_return_throws_info": "true",
+    
+    "remove_non_ascii": "true",
+
+    "_comment_remove_comment_tags": "this removes /* // etc characters",
+    "remove_comment_tags": "true",
+
+    "_tokens_html_tags": ["<p>", "</p>","< p >", "< / p >", "< br >", "<br>", "<li>", "< li >", "<i>", "</i>", "< i >", "< / i >", "<code>", "< code >", "</code>", "< / code >", "<a>", "< a >", "</a>", "< / a >", "<b>", "< b >", "</b>", "< / b >", "<td>", "< td >", "<tt>", "< tt >", "<ul>", "< ul >", "<ol>", "< ol >", "<yield>", "< yield >", "<tr>", "< tr >", "</tr>", "< / tr >", "< br / >", "<br/>", "< p / >" ],
+    "remove_html_tags": "true", 
+
+    "_comment_remove_at_words": "this removes link, code inhericdoc etc",
+    "_tokens_at_words": ["@link", "@code", "@inheritdoc", "@inheritDoc", "inheritdoc", "inheritDoc"],
+    "remove_at_words": "true", 
+
+    "remove_begin_end_user_doc": "true", 
+
+    "maximum_length": 50000,
+
+    "minimum_alphabet_count": 2,
+
+    "_comment_remove_unwanted_symbol": "this removes the following symbols from nl",
+
+    "_tokens_unwanted_symbol": ["@", "{", "#", "}" ],
+    "remove_unwanted_symbol": "true" 
+}
