@@ -10,7 +10,10 @@ This is the public release of code, data and pretrained models of our paper titl
 
 - [Quickstart](#quickstart)
 - [Introduction](#introduction)
-- [Dataset](#data)
+- [CodeCorpus Dataset](#codecorpus-dataset)
+    - [CodeCorpus Dataset Creation](#codecorpus-dataset-creation)
+    - [Preprocess CodeCorpus for Code Search](#preprocess-codecorpus-for-code-search)
+    - [Preprocess CodeCorpus for Code Summarization](#preprocess-codecorpus-for-code-summarization)
 - [Licenses](#licenses)
 - [Code Search](#code-search)
 
@@ -34,7 +37,7 @@ This is the public release of code, data and pretrained models of our paper titl
 This is a sample intro.
 
 
-# Dataset
+# CodeCorpus Dataset
 After initial setup described at [Quickstart](#quickstart), our dataset will be downloaded at `data/` folder along with preprocessed data for code search task and code summarization task. We also provide the source datasets here. Following are the links and descriptions of the dataset and preprocessed data.
 
 1. [CodeCorpus](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U): This file contains our 4.2m dataset. The description of this dataset is given in our paper.
@@ -46,6 +49,29 @@ After initial setup described at [Quickstart](#quickstart), our dataset will be 
 4. [CSN_preprocessed_data_balanced_partition](https://mega.nz/file/t543VCyA#4BLjB28yYNDT9kXBs6NWmY1ADOCMyuvqDXLg9yPhiaI): This file contains the preprocessed data for CodeSearchNet networks. Here train, test, and validation sets are from our balanced partition described in our paper
 
 5. [NCS_preprocessed_data](https://mega.nz/file/Npo1RaBZ#ug6jJPacpjNht537PmOwxsR2MlOps0Y-LOwhx8lQ5ys): This file contains the preprocessed data for neural code summarization networks.
+
+## CodeCorpus Dataset Creation
+As we have already mentioned, we have provided the original data from sources to the `data/original_data/` folder. To create the 4.2m CodeCorpus dataset from original data, the following command should be used.
+ ```bash
+ python Dataset_Preparation/Merge_Datasets.py
+ ```
+
+## Preprocess CodeCorpus for Code Search 
+The following command preprocesses CodeCorpus dataset for [CodeSearchNet](https://arxiv.org/abs/1909.09436) Challenge. It also preprocesses their validation and test sets using the filters defined in our paper.
+ ```bash
+ python Dataset_Preparation/Preprocess_CSN.py
+ ```
+
+ To create a balanced train-valid-test split for CodeSearchNet networks, the command can be used.
+  ```bash
+ python Dataset_Preparation/Preprocess_CSN_Balanced_Partition.py
+ ```
+
+## Preprocess CodeCorpus for Code Summarization
+The following command preprocesses CodeCorpus dataset for [NeuralCodeSum](https://arxiv.org/abs/2005.00653) networks.
+  ```bash
+ python Dataset_Preparation/Preprocess_NCS.py
+ ```
 
 
 # Code Search
