@@ -2,7 +2,7 @@
 
 A large dataset of 4.2m Java source code and parallel data of their description from code search, and code summarization studies.
 
-This is the public release of code, data and pretrained models of our paper titled "CodeCorpus: Large Code-Description Parallel Dataset", submitted to EACL, 2021.
+This is the public release of code, and data of our paper titled "CodeCorpus: Large Code-Description Parallel Dataset", submitted to EACL, 2021.
 
 **Table of Contents**
 
@@ -14,8 +14,10 @@ This is the public release of code, data and pretrained models of our paper titl
     - [CodeCorpus Dataset Creation](#codecorpus-dataset-creation)
     - [Preprocess CodeCorpus for Code Search](#preprocess-codecorpus-for-code-search)
     - [Preprocess CodeCorpus for Code Summarization](#preprocess-codecorpus-for-code-summarization)
-- [Licenses](#licenses)
+- [Tokenizer](#tokenizer)
 - [Code Search](#code-search)
+- [Code Summarization](#code-summarization)
+- [Licenses](#licenses)
 
 <!-- /TOC -->
 
@@ -50,6 +52,8 @@ After initial setup described at [Quickstart](#quickstart), our dataset will be 
 
 5. [NCS_preprocessed_data](https://mega.nz/file/Npo1RaBZ#ug6jJPacpjNht537PmOwxsR2MlOps0Y-LOwhx8lQ5ys): This file contains the preprocessed data for neural code summarization networks.
 
+6. *** add bpe tokenized ncs preprocessed data here ***
+
 ## CodeCorpus Dataset Creation
 As we have already mentioned, we have provided the original data from sources to the `data/original_data/` folder. To create the 4.2m CodeCorpus dataset from original data, the following command should be used.
  ```bash
@@ -73,6 +77,10 @@ The following command preprocesses CodeCorpus dataset for [NeuralCodeSum](https:
  python Dataset_Preparation/Preprocess_NCS.py
  ```
 
+ *** add commands here for bpe ***
+
+# Tokenizer
+
 
 # Code Search
 After initial setup described at [Quickstart](#quickstart), a forked version of [CodeSearchNet](https://github.com/code-description2020/CodeSearchNet.git) is cloned and preprocessed data of CodeCorpus will be copied to `CodeSearchNet/resources/data/`. To use the preprocessed dataset of balanced partition, clear the above mentioned folder, and copy the content inside of `data/csn_preprocessed_data_balanced_partition/` into it.
@@ -91,6 +99,8 @@ Then the following commands will train and test code search networks:
  python train.py --model convselfattentionmodel --run-name convattn_codecorpus
  ```
 
+# Code Summarization
+*** complete this section ***
 
 # Licenses
 Codes, dataset and models from [CodeSearchNet](https://github.com/github/CodeSearchNet.git), and [NeuralCodeSum](https://github.com/wasiahmad/NeuralCodeSum.git) are used with the licenses provided at their respective repositories.   
