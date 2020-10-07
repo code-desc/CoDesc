@@ -42,7 +42,7 @@ This is a sample intro.
 # CodeCorpus Dataset
 After initial setup described at [Quickstart](#quickstart), our dataset will be downloaded at `data/` folder along with preprocessed data for code search task and code summarization task. We also provide the source datasets here. Following are the links and descriptions of the dataset and preprocessed data.
 
-1. [CodeCorpus](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U): This file contains our 4.2m dataset. The details of this dataset is given in our paper as well as in [Dataset Description](?) page.
+1. [CodeCorpus](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U): This file contains our 4.2m dataset. The details of this dataset is given in our paper as well as in [Dataset Description](https://github.com/code-description2020/CodeCorpus/blob/master/Dataset%20Description.md) page.
 
 2. [Original_data](https://mega.nz/file/ZpoBla5a#qeSxMXP6v-2FEI237cIVrFhuqnq5DHh88_EKuReSY3k): This file contains the source data from where we have collected and preprocessed our 4.2m dataset.
 
