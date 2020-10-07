@@ -36,7 +36,7 @@ This is the public release of code, and data of our paper titled "CoDesc: Large 
   ```
 
 # Introduction
-This is a sample intro.
+CoDesc is a noise removed, large parallel dataset of source codes and corresponding natural language descriptions. This dataset is procured from several similar, but noisy datasets including [CodeSearchNet](https://github.com/github/CodeSearchNet.git), [FunCom](http://leclair.tech/data/funcom/), [DeepCom](https://github.com/xing-hu/DeepCom.git), and [CONCODE](https://github.com/sriniiyer/concode.git). We have developed and released the noise removal and preprocessing source codes along with the dataset. We also demonstrate the usefulness of CoDesc dataset in two popular tasks: natural language code search and source code summarization.
 
 
 # CoDesc Dataset
@@ -83,7 +83,7 @@ The following command preprocesses CoDesc dataset for [NeuralCodeSum](https://ar
  *** add commands here for bpe ***
 
 # Tokenizer
-The tokenizers for source codes and natural language descriptions are given in the `Tokenizer/` directory. To use the tokenizers in python, `code_filter` and `nl_filter` functions will have to be imported from `Tokenizer/CodePreprocess_final.py` and `Tokenizer/NLPreprocess_final.py`.  Moreover, two json files named `code_filter_flag.json` and `nl_filter_flag.json` will have to be present in the working directory containing the options to preprocess data. These two files must follow the formats given the `Tokenizer/` folder. These flag options are also briefly described in the above mentioned json files.
+The tokenizers for source codes and natural language descriptions are given in the `Tokenizer/` directory. To use the tokenizers in python, `code_filter` and `nl_filter` functions will have to be imported from `Tokenizer/CodePreprocess_final.py` and `Tokenizer/NLPreprocess_final.py`.  Moreover, two json files named `code_filter_flag.json` and `nl_filter_flag.json` containing the options to preprocess code and description data will have to be present in the working directory. These two files must follow the formats given the `Tokenizer/` folder. These flag options are also briefly described in the above mentioned json files.
 
 # Code Search
 During the initial setup described at [Quickstart](#quickstart), a forked version of [CodeSearchNet](https://github.com/code-desc/CodeSearchNet.git) is cloned into the working directory, and the preprocessed data of CoDesc will be copied to `CodeSearchNet/resources/data/` directory. To use the preprocessed dataset of balanced partition, clear the above mentioned folder, and copy the content inside of `data/csn_preprocessed_data_balanced_partition/` into it.
