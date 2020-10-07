@@ -31,7 +31,7 @@ ERROR_STRING = "__ERROR__"
 # %%
 OUTPUT_FOLDER = "data/ncs_preprocessed_data/"
     
-divs = ["train-codecorpus", "train", "dev", "test"]
+divs = ["train-CoDesc", "train", "dev", "test"]
 for div in divs:
     folder = OUTPUT_FOLDER+div+"/"
     os.system('mkdir -p $folder')
@@ -42,41 +42,41 @@ AVOID_DICT = {}
 SEPARATOR = '<SEP>'
 
 # %% [markdown]
-# # Load CodeCorpus
+# # Load CoDesc
 
 # %%
-CODECORPUS_FOLDER = "data/CodeCorpus/"
+CoDesc_FOLDER = "data/CoDesc/"
 
 
 # %%
-in_file = open(CODECORPUS_FOLDER+"CodeCorpus.json", 'r')
-codecorpus_data = json.load(in_file)
+in_file = open(CoDesc_FOLDER+"CoDesc.json", 'r')
+CoDesc_data = json.load(in_file)
 in_file.close()
 
 
 # %%
-in_file = open(CODECORPUS_FOLDER+"src2id.json", 'r')
+in_file = open(CoDesc_FOLDER+"src2id.json", 'r')
 src2id_dict = json.load(in_file)
 in_file.close()
 
 
 # %%
-# id2src_df = pd.read_csv(CODECORPUS_FOLDER+"id2src.csv")
+# id2src_df = pd.read_csv(CoDesc_FOLDER+"id2src.csv")
 # id2src_df
 
 
 # %%
-len(codecorpus_data) # 4211516
+len(CoDesc_data) # 4211516
 
 
 # %%
 # Remove some fields to optimize memory consumption
-for idx in range(len(codecorpus_data)):
-    codecorpus_data[idx].pop('src')
-    codecorpus_data[idx].pop('src_div')
-    codecorpus_data[idx].pop('src_idx')
-    codecorpus_data[idx].pop('original_code')
-    codecorpus_data[idx].pop('original_nl')
+for idx in range(len(CoDesc_data)):
+    CoDesc_data[idx].pop('src')
+    CoDesc_data[idx].pop('src_div')
+    CoDesc_data[idx].pop('src_idx')
+    CoDesc_data[idx].pop('original_code')
+    CoDesc_data[idx].pop('original_nl')
 gc.collect()
 
 # %% [markdown]
@@ -130,7 +130,7 @@ with open('nl_filter_flag.json', 'w') as outfile:
     outfile.close()
 
 # %% [markdown]
-# # Multiprocessing Tokenize CodeCorpus Codes and Save
+# # Multiprocessing Tokenize CoDesc Codes and Save
 
 # %%
 # multiprocessing
@@ -154,18 +154,18 @@ def worker_function(worker_data, code_dict):
 manager = multiprocessing.Manager()
 shared_code_dict = manager.dict()
 
-worker_amount = math.floor(len(codecorpus_data)/NUM_CORES)
+worker_amount = math.floor(len(CoDesc_data)/NUM_CORES)
 
 workers = []
 
 for i in range(NUM_CORES):
     low = i*worker_amount
     if i == NUM_CORES-1:
-        high = len(codecorpus_data)
+        high = len(CoDesc_data)
     else:
         high = low+worker_amount
     
-    w = multiprocessing.Process(target=worker_function, args=(codecorpus_data[low:high], shared_code_dict))
+    w = multiprocessing.Process(target=worker_function, args=(CoDesc_data[low:high], shared_code_dict))
     workers.append(w)
     w.start()
 
@@ -186,7 +186,7 @@ tokenized_code_dict[100]
 
 
 # %%
-codecorpus_data[100]
+CoDesc_data[100]
 
 
 # %%
@@ -274,9 +274,9 @@ in_file.close()
 
 
 # %%
-for idx in range(len(codecorpus_data)):
-    codecorpus_data[idx]['code'] = tokenized_code_dict[str(idx)].encode('ascii', errors='ignore').decode().strip()
-    codecorpus_data[idx]['nl'] = codecorpus_data[idx]['nl'].encode('ascii', errors='ignore').decode().strip()
+for idx in range(len(CoDesc_data)):
+    CoDesc_data[idx]['code'] = tokenized_code_dict[str(idx)].encode('ascii', errors='ignore').decode().strip()
+    CoDesc_data[idx]['nl'] = CoDesc_data[idx]['nl'].encode('ascii', errors='ignore').decode().strip()
 
 
 # %%
@@ -285,7 +285,7 @@ gc.collect()
 
 
 # %%
-codecorpus_data[100]
+CoDesc_data[100]
 
 # %% [markdown]
 # # Initial Selection of IDs for train, valid and test sets
@@ -308,7 +308,7 @@ for a_id in avoid_ids:
 # %%
 train_ids_pass1 = []
 
-for candidate_id in range(len(codecorpus_data)):
+for candidate_id in range(len(CoDesc_data)):
     if candidate_id % 1000000 == 0:
         print(datetime.datetime.now(), ":", candidate_id)
     try:
@@ -330,7 +330,7 @@ for candidate_id in train_ids_pass1:
     if candidate_id % 1000000 == 0:
         print(datetime.datetime.now(), ":", candidate_id)
         
-    check_str = codecorpus_data[candidate_id]['code']+SEPARATOR+codecorpus_data[candidate_id]['nl']
+    check_str = CoDesc_data[candidate_id]['code']+SEPARATOR+CoDesc_data[candidate_id]['nl']
         
     if check_str.startswith(ERROR_STRING) or check_str.endswith(ERROR_STRING):
         errors.append(candidate_id)
@@ -364,7 +364,7 @@ gc.collect()
 
 
 # %% [markdown]
-# # Creating train-codecorpus set
+# # Creating train-CoDesc set
 
 # %%
 train_ids = train_ids_pass2
@@ -373,7 +373,7 @@ id_dict['train'] = train_ids
 
 
 # %%
-div = "train-codecorpus"
+div = "train-CoDesc"
 print(div)
 
 code_file = open(OUTPUT_FOLDER+div+"/code.original_subtoken", 'w', encoding='ascii')
@@ -381,15 +381,15 @@ nl_file = open(OUTPUT_FOLDER+div+"/javadoc.original", 'w', encoding='ascii')
 
 
 for sample_id in train_ids:
-    code_file.write(codecorpus_data[sample_id]['code']+"\n")
-    nl_file.write(codecorpus_data[sample_id]['nl']+"\n")
+    code_file.write(CoDesc_data[sample_id]['code']+"\n")
+    nl_file.write(CoDesc_data[sample_id]['nl']+"\n")
 
 code_file.close()
 nl_file.close()
 
 
 # %%
-with open(OUTPUT_FOLDER+"ncs-codecorpus_train_ids.json", 'w') as outfile:
+with open(OUTPUT_FOLDER+"ncs-CoDesc_train_ids.json", 'w') as outfile:
     json.dump(id_dict, outfile)
     outfile.close()
 
@@ -401,7 +401,7 @@ with open(OUTPUT_FOLDER+"ncs-codecorpus_train_ids.json", 'w') as outfile:
 # # Clean Memory
 
 # %%
-del codecorpus_data
+del CoDesc_data
 del src2id_dict
 del id_dict
 gc.collect()

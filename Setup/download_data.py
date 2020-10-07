@@ -9,8 +9,8 @@ print('Starting download...')
 mega = Mega()
 
 mega.download_url('https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U')  
-print("CodeCorpus.7z downloaded")
-os.system("7z x CodeCorpus.7z")
+print("CoDesc.7z downloaded")
+os.system("7z x CoDesc.7z")
 
 mega.download_url('https://mega.nz/file/Q4oxQCIb#CT7P5zq1WbiWOLTeafg-mFD2QZEmF1YwZmDhGZkzU90')  
 print("csn_preprocessed_data.7z downloaded")

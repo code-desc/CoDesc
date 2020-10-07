@@ -1,12 +1,12 @@
-# Details of CodeCorpus
+# Details of CoDesc
   
 ## Files description
-[CodeCorpus](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U) contains the follwing files that consists the 4.2m dataset and related information.  
+[CoDesc](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U) contains the following files that consists the 4.2m CoDesc dataset and related information.  
 
-1. CodeCorpus.json:  
+1. CoDesc.json:  
     * List of python dictionaries type  
     * Each entry has the following keys:  
-        - id: unique id in CodeCorpus dataset  
+        - id: unique id in CoDesc dataset  
         - src: source dataset  
         - src_div: which subset the entry was taken from, e.g. train, test, etc.  
         - src_idx: idx in source subset  
@@ -14,11 +14,11 @@
         - nl: natural language description after initial filtering  
         - original_code: source code taken from source  
         - original_nl: natural language description taken from source  
-        - partition: 'train', 'valid' or 'test'  
+        - partition: "train", "valid" or "test"  
   
 2. src2id.json:  
 	* Dictionary type  
-	* src2id[src][src_div] is a list of ids from CodeCorpus dataset  
+	* src2id[src][src_div] is a list of ids from CoDesc dataset  
 	* src -> src_div:   
 		- "CodeSearchNet-Java" -> "test", "valid", "train", "removed"  
 		- "FunCom" -> "none"   
@@ -29,7 +29,7 @@
 3. id2src.csv:  
 	* csv type  
 	* Columns:   
-		- id: unique id in CodeCorpus dataset  
+		- id: unique id in CoDesc dataset  
 		- src: source dataset  
 		- src_div: which subset the entry was taken from, e.g. train, test, etc.  
 		- src_idx: idx in source subset   
@@ -43,7 +43,7 @@
   
 5. partition2id.json  
 	* Dictionary type  
-	* partition2id['train'], partition2id['valid'], and partition2id['test'] are list of ids in CodeCorpus dataset corresponding to the partition they belong to.  
+	* partition2id["train"], partition2id["valid"], and partition2id["test"] are list of ids in CoDesc dataset corresponding to the partition they belong to.  
 
 
 ## Dataset Statistics
@@ -143,7 +143,7 @@
     <td class="tg-9anz">68.69</td>
   </tr>
   <tr>
-    <td class="tg-de2y">CodeCorpus (All)</td>
+    <td class="tg-de2y">CoDesc (All)</td>
     <td class="tg-9anz">N/A</td>
     <td class="tg-9anz">5,920,530</td>
     <td class="tg-9anz">4,211,516</td>
@@ -155,7 +155,7 @@
     <td class="tg-9anz">92.28</td>
   </tr>
   <tr>
-    <td class="tg-0pky" colspan="10">Balanced <span style="font-style:italic">train-valid-test</span> split for CodeCorpus data</td>
+    <td class="tg-0pky" colspan="10">Balanced <span style="font-style:italic">train-valid-test</span> split for CoDesc data</td>
   </tr>
   <tr>
     <td class="tg-0lax">train</td>

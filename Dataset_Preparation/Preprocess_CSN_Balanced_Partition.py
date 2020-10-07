@@ -31,41 +31,41 @@ for div in divs:
 NUM_EXAMPLE_PER_FILE = 30000
 
 # %% [markdown]
-# # Load CodeCorpus
+# # Load CoDesc
 
 # %%
-CODECORPUS_FOLDER = "data/CodeCorpus/"
+CoDesc_FOLDER = "data/CoDesc/"
 
 
 # %%
-in_file = open(CODECORPUS_FOLDER+"CodeCorpus.json", 'r')
-codecorpus_data = json.load(in_file)
+in_file = open(CoDesc_FOLDER+"CoDesc.json", 'r')
+CoDesc_data = json.load(in_file)
 in_file.close()
 
 
 # %%
-in_file = open(CODECORPUS_FOLDER+"partiton2id_dict.json", 'r')
+in_file = open(CoDesc_FOLDER+"partiton2id_dict.json", 'r')
 partiton2id_dict = json.load(in_file)
 in_file.close()
 
 
 # %%
-# id2src_df = pd.read_csv(CODECORPUS_FOLDER+"id2src.csv")
+# id2src_df = pd.read_csv(CoDesc_FOLDER+"id2src.csv")
 # id2src_df
 
 
 # %%
-len(codecorpus_data) # 4211516
+len(CoDesc_data) # 4211516
 
 
 # %%
 # Remove some fields to optimize memory consumption
-for idx in range(len(codecorpus_data)):
-    codecorpus_data[idx].pop('src')
-    codecorpus_data[idx].pop('src_div')
-    codecorpus_data[idx].pop('src_idx')
-    codecorpus_data[idx].pop('original_code')
-    codecorpus_data[idx].pop('original_nl')
+for idx in range(len(CoDesc_data)):
+    CoDesc_data[idx].pop('src')
+    CoDesc_data[idx].pop('src_div')
+    CoDesc_data[idx].pop('src_idx')
+    CoDesc_data[idx].pop('original_code')
+    CoDesc_data[idx].pop('original_nl')
 gc.collect()
 
 
@@ -114,7 +114,7 @@ for div in divs:
     div_data = []
     file_idx = 0
     for sample_id in partiton2id_dict[div]:
-        sample_dict = create_sample(sample_id, codecorpus_data[sample_id]['code'], codecorpus_data[sample_id]['nl'], div)
+        sample_dict = create_sample(sample_id, CoDesc_data[sample_id]['code'], CoDesc_data[sample_id]['nl'], div)
 
         if sample_dict is None:
             id_dict[div].remove(sample_id)
@@ -158,7 +158,7 @@ for div in divs:
 # # Clean Memory
 
 # %%
-del codecorpus_data
+del CoDesc_data
 del partiton2id_dict
 
 gc.collect()

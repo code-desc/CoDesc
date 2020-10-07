@@ -697,7 +697,7 @@ print(CSN_Py2Java_data[-1])
 # # Merge the Files
 
 # %%
-OUT_FOLDER = 'data/CodeCorpus/'
+OUT_FOLDER = 'data/CoDesc/'
 if not os.path.exists(OUT_FOLDER):
     os.mkdir(OUT_FOLDER)
     
@@ -824,7 +824,7 @@ for div in ['train', 'valid', 'test']:
 
 
 # %%
-with open(OUT_FOLDER+"CodeCorpus.json", 'w') as outfile:
+with open(OUT_FOLDER+"CoDesc.json", 'w') as outfile:
     json.dump(out_data, outfile, indent=2)
     outfile.close()
 
