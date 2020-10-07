@@ -54,6 +54,9 @@ After initial setup described at [Quickstart](#quickstart), our dataset will be 
 
 6. *** add bpe tokenized ncs preprocessed data here ***
 
+## Python to Java Translation of CodeSearchNet Python Dataset
+We have created a forked repository of [Transcoder](https://github.com/code-description/TransCoder.git) that facillicates parallel translation of source codes and speeds up the process by 16 times. Instructions to use Transcoder can be found in the above mentioned repository. The original work is published under the title ["Unsupervised Translation of Programming Languages"](https://arxiv.org/abs/2006.03511).
+
 ## CoDesc Dataset Creation
 As we have already mentioned, we have provided the original data from sources to the `data/original_data/` folder. To create the 4.2m CoDesc dataset from original data, the following command should be used.
  ```bash
@@ -85,7 +88,7 @@ The following command preprocesses CoDesc dataset for [NeuralCodeSum](https://ar
 
 
 # Code Search
-During the initial setup described at [Quickstart](#quickstart), a forked version of [CodeSearchNet](https://github.com/code-description2020/CodeSearchNet.git) is cloned and preprocessed data of CoDesc will be copied to `CodeSearchNet/resources/data/` directory. To use the preprocessed dataset of balanced partition, clear the above mentioned folder, and copy the content inside of `data/csn_preprocessed_data_balanced_partition/` into it.
+During the initial setup described at [Quickstart](#quickstart), a forked version of [CodeSearchNet](https://github.com/code-description/CodeSearchNet.git) is cloned into the working directory, and the preprocessed data of CoDesc will be copied to `CodeSearchNet/resources/data/` directory. To use the preprocessed dataset of balanced partition, clear the above mentioned folder, and copy the content inside of `data/csn_preprocessed_data_balanced_partition/` into it.
 
 Then the following commands will train and test code search networks:
  ```bash
