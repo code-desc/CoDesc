@@ -155,7 +155,7 @@
     <td class="tg-9anz">92.28</td>
   </tr>
   <tr>
-    <td class="tg-0pky" colspan="10">Balanced <span style="font-style:italic">train-valid-test</span> split for CoDesc data</td>
+    <td class="tg-0pky" colspan="10">Balanced <span style="font-style:italic"><i>train-valid-test</i></span> split for CoDesc data</td>
   </tr>
   <tr>
     <td class="tg-0lax">train</td>
