@@ -52,7 +52,9 @@ After initial setup described at [Quickstart](#quickstart), our dataset will be 
 
 5. [NCS_preprocessed_data](https://mega.nz/file/45BXRSSb#sj2bSC9AHxralmpAud6Uy1_g6HOFnZq0Dk4pfqiP-1M): This file contains the preprocessed data for neural code summarization networks.
 
-6. *** add bpe tokenized ncs preprocessed data here ***\newpage
+6. *** add bpe tokenized ncs preprocessed data here ***
+
+## Python to Java Translation
 We have created a forked repository of [Transcoder](https://github.com/code-desc/TransCoder.git) that facillicates parallel translation of source codes and speeds up the process by 16 times. Instructions to use Transcoder can be found in the above mentioned repository. The original work is published under the title ["Unsupervised Translation of Programming Languages"](https://arxiv.org/abs/2006.03511).
 
 ## CoDesc Dataset Creation
