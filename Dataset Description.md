@@ -65,20 +65,20 @@
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-nehb" rowspan="2"><span style="font-weight:400;font-style:normal">Name</span></th>
-    <th class="tg-nehb" rowspan="2">#Projects</th>
-    <th class="tg-nehb" rowspan="2"><span style="font-weight:400;font-style:normal">#Raw </span><br>data</th>
-    <th class="tg-ao2g" rowspan="2">#Clean <br>data</th>
-    <th class="tg-ao2g" colspan="3">Code</th>
-    <th class="tg-ao2g" colspan="3">NL</th>
+    <th class="tg-nehb" rowspan="2"><span style="font-weight:400;font-style:normal"><b>Name</b></span></th>
+    <th class="tg-nehb" rowspan="2"><b>#Projects</b></th>
+    <th class="tg-nehb" rowspan="2"><span style="font-weight:400;font-style:normal"><b>#Raw </span><br>data</b></th>
+    <th class="tg-ao2g" rowspan="2"><b>#Clean <br>data</b></th>
+    <th class="tg-ao2g" colspan="3"><b>Code</b></th>
+    <th class="tg-ao2g" colspan="3"><b>NL</b></th>
   </tr>
   <tr>
-    <td class="tg-ao2g">#Unique<br>tokens</td>
-    <td class="tg-ao2g">Avg <br>len</td>
-    <td class="tg-ao2g"><span style="font-style:normal">≤ 200 (%)</span></td>
-    <td class="tg-ao2g">#Unique<br>tokens</td>
-    <td class="tg-ao2g">Avg <br>len</td>
-    <td class="tg-ao2g"><span style="font-weight:400;font-style:normal">≤ 50 (%)</span></td>
+    <td class="tg-ao2g"><b>#Unique<br>tokens</b></td>
+    <td class="tg-ao2g"><b>Avg <br>len</b></td>
+    <td class="tg-ao2g"><span style="font-style:normal"><b>≤ 200 (%)</b></span></td>
+    <td class="tg-ao2g"><b>#Unique<br>tokens</b></td>
+    <td class="tg-ao2g"><b>Avg <br>len</b></td>
+    <td class="tg-ao2g"><span style="font-weight:400;font-style:normal"><b>≤ 50 (%)</b></span></td>
   </tr>
 </thead>
 <tbody>
