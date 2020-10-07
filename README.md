@@ -25,7 +25,7 @@ This is the public release of code, and data of our paper titled "CoDesc: Large 
 # Quickstart
   ```bash
   # clone this repository
-  git clone https://github.com/code-description2020/CoDesc.git
+  git clone https://github.com/code-description/CoDesc.git
   
   # change permission of scripts
   sudo chmod -R +x CoDesc
@@ -42,7 +42,7 @@ This is a sample intro.
 # CoDesc Dataset
 After initial setup described at [Quickstart](#quickstart), our dataset will be downloaded at `data/` folder along with preprocessed data for code search task and code summarization task. We also provide the source datasets here. Following are the links and descriptions of the dataset and preprocessed data.
 
-1. [CoDesc](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U): This file contains our 4.2m dataset. The details of this dataset is given in our paper as well as in [Dataset Description](https://github.com/code-description2020/CoDesc/blob/master/Dataset%20Description.md) page.
+1. [CoDesc](https://mega.nz/file/x5BQGDCY#LwmKDu5eYNTdG85xrW85jh3gcJvcsBpKwY9ufTFM1vs): This file contains our 4.2m dataset. The details of this dataset is given in our paper as well as in [Dataset Description](https://github.com/code-description2020/CoDesc/blob/master/Dataset%20Description.md) page.
 
 2. [Original_data](https://mega.nz/file/ZpoBla5a#qeSxMXP6v-2FEI237cIVrFhuqnq5DHh88_EKuReSY3k): This file contains the source data from where we have collected and preprocessed our 4.2m dataset.
 
@@ -50,11 +50,9 @@ After initial setup described at [Quickstart](#quickstart), our dataset will be 
 
 4. [CSN_preprocessed_data_balanced_partition](https://mega.nz/file/t543VCyA#4BLjB28yYNDT9kXBs6NWmY1ADOCMyuvqDXLg9yPhiaI): This file contains the preprocessed data for CodeSearchNet networks. Here train, test, and validation sets are from our balanced partition described in our paper
 
-5. [NCS_preprocessed_data](https://mega.nz/file/Npo1RaBZ#ug6jJPacpjNht537PmOwxsR2MlOps0Y-LOwhx8lQ5ys): This file contains the preprocessed data for neural code summarization networks.
+5. [NCS_preprocessed_data](https://mega.nz/file/45BXRSSb#sj2bSC9AHxralmpAud6Uy1_g6HOFnZq0Dk4pfqiP-1M): This file contains the preprocessed data for neural code summarization networks.
 
 6. *** add bpe tokenized ncs preprocessed data here ***
-
-*** statistics table ***
 
 ## CoDesc Dataset Creation
 As we have already mentioned, we have provided the original data from sources to the `data/original_data/` folder. To create the 4.2m CoDesc dataset from original data, the following command should be used.

@@ -8,7 +8,7 @@ os.chdir('data/')
 print('Starting download...')
 mega = Mega()
 
-mega.download_url('https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U')  
+mega.download_url('https://mega.nz/file/x5BQGDCY#LwmKDu5eYNTdG85xrW85jh3gcJvcsBpKwY9ufTFM1vs')  
 print("CoDesc.7z downloaded")
 os.system("7z x CoDesc.7z")
 
@@ -20,7 +20,7 @@ mega.download_url('https://mega.nz/file/t543VCyA#4BLjB28yYNDT9kXBs6NWmY1ADOCMyuv
 print("csn_preprocessed_data_balanced_partition.7z downloaded")
 os.system("7z x csn_preprocessed_data_balanced_partition.7z")
 
-mega.download_url('https://mega.nz/file/Npo1RaBZ#ug6jJPacpjNht537PmOwxsR2MlOps0Y-LOwhx8lQ5ys')  
+mega.download_url('https://mega.nz/file/45BXRSSb#sj2bSC9AHxralmpAud6Uy1_g6HOFnZq0Dk4pfqiP-1M')  
 print("ncs_preprocessed_data.7z downloaded")
 os.system("7z x ncs_preprocessed_data.7z")
 
