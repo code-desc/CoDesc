@@ -11,6 +11,7 @@ This is the public release of code, and data of our paper titled "CodeCorpus: La
 - [Quickstart](#quickstart)
 - [Introduction](#introduction)
 - [CodeCorpus Dataset](#codecorpus-dataset)
+    - [Dataset Statistics](#dataset-statistics)
     - [CodeCorpus Dataset Creation](#codecorpus-dataset-creation)
     - [Preprocess CodeCorpus for Code Search](#preprocess-codecorpus-for-code-search)
     - [Preprocess CodeCorpus for Code Summarization](#preprocess-codecorpus-for-code-summarization)
@@ -42,7 +43,7 @@ This is a sample intro.
 # CodeCorpus Dataset
 After initial setup described at [Quickstart](#quickstart), our dataset will be downloaded at `data/` folder along with preprocessed data for code search task and code summarization task. We also provide the source datasets here. Following are the links and descriptions of the dataset and preprocessed data.
 
-1. [CodeCorpus](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U): This file contains our 4.2m dataset. The description of this dataset is given in our paper.
+1. [CodeCorpus](https://mega.nz/file/Rsx3zaqY#stMEpCe33JLAIcslPZRf6sKXcka3JW3eivgjR5DFl5U): This file contains our 4.2m dataset. The details of this dataset is given in our paper as well as in [Dataset Statistics](#dataset-statistics) section.
 
 2. [Original_data](https://mega.nz/file/ZpoBla5a#qeSxMXP6v-2FEI237cIVrFhuqnq5DHh88_EKuReSY3k): This file contains the source data from where we have collected and preprocessed our 4.2m dataset.
 
@@ -53,6 +54,10 @@ After initial setup described at [Quickstart](#quickstart), our dataset will be 
 5. [NCS_preprocessed_data](https://mega.nz/file/Npo1RaBZ#ug6jJPacpjNht537PmOwxsR2MlOps0Y-LOwhx8lQ5ys): This file contains the preprocessed data for neural code summarization networks.
 
 6. *** add bpe tokenized ncs preprocessed data here ***
+
+## Dataset Statistics
+
+*** statistics table ***
 
 ## CodeCorpus Dataset Creation
 As we have already mentioned, we have provided the original data from sources to the `data/original_data/` folder. To create the 4.2m CodeCorpus dataset from original data, the following command should be used.
