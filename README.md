@@ -52,7 +52,7 @@ After initial setup described at [Quickstart](#quickstart), our dataset will be 
 
 5. [NCS_preprocessed_data](https://mega.nz/file/45BXRSSb#sj2bSC9AHxralmpAud6Uy1_g6HOFnZq0Dk4pfqiP-1M): This file contains the preprocessed data for neural code summarization networks.
 
-6. *** add bpe tokenized ncs preprocessed data here ***
+6. [BPE_Tokenized_NCS_preprocessed_data](https://drive.google.com/file/d/14nHVljNMb37-tpOW59NaDY26T6z2BcXD/view?usp=sharing): This file contains the preprocessed data for neural code summarization networks with BPE tokenization.
 
 ## Python to Java Translation
 We have created a forked repository of [Transcoder](https://github.com/code-desc/TransCoder.git) that facillicates parallel translation of source codes and speeds up the process by 16 times. Instructions to use Transcoder can be found in the above mentioned repository. The original work is published under the title ["Unsupervised Translation of Programming Languages"](https://arxiv.org/abs/2006.03511).
@@ -81,16 +81,14 @@ The following command preprocesses CoDesc dataset for [NeuralCodeSum](https://ar
  ```
  
 # Tokenizer
-if huggingface tokenizer library is not installed run this command
-  ```bash
- pip install transformers
- ```
- to train and create tokenized files using bpe use this command
+The tokenizers for source codes and natural language descriptions are given in the `Tokenizer/` directory. To use the tokenizers in python, `code_filter` and `nl_filter` functions will have to be imported from `Tokenizer/CodePreprocess_final.py` and `Tokenizer/NLPreprocess_final.py`.  Moreover, two json files named `code_filter_flag.json` and `nl_filter_flag.json` containing the options to preprocess code and description data will have to be present in the working directory. These two files must follow the formats given the `Tokenizer/` folder. These flag options are also briefly described in the above mentioned json files.
+
+To train and create tokenized files using bpe, use the following command.
  ```bash
  python Tokenizer/huggingface_bpe.py
  ```
 
-The tokenizers for source codes and natural language descriptions are given in the `Tokenizer/` directory. To use the tokenizers in python, `code_filter` and `nl_filter` functions will have to be imported from `Tokenizer/CodePreprocess_final.py` and `Tokenizer/NLPreprocess_final.py`.  Moreover, two json files named `code_filter_flag.json` and `nl_filter_flag.json` containing the options to preprocess code and description data will have to be present in the working directory. These two files must follow the formats given the `Tokenizer/` folder. These flag options are also briefly described in the above mentioned json files.
+
 
 # Code Search
 During the initial setup described at [Quickstart](#quickstart), a forked version of [CodeSearchNet](https://github.com/code-desc/CodeSearchNet.git) is cloned into the working directory, and the preprocessed data of CoDesc will be copied to `CodeSearchNet/resources/data/` directory. To use the preprocessed dataset of balanced partition, clear the above mentioned folder, and copy the content inside of `data/csn_preprocessed_data_balanced_partition/` into it.
@@ -110,7 +108,7 @@ Then the following commands will train and test code search networks:
  ```
 
 # Code Summarization
-We used the original implementation of Code Summarization. [NeuralCodeSum](https://github.com/wasiahmad/NeuralCodeSum.git)
+We used the original implementation of Code Summarization of [NeuralCodeSum](https://github.com/wasiahmad/NeuralCodeSum.git). Please refer to [this guide](https://github.com/code-desc/CoDesc/blob/master/CodeSummarization/data/README.md) for instructions on how to train the code summarization network.
 
 
 # Licenses
