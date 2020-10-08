@@ -13,7 +13,7 @@ print(tokenizer_doc.get_vocab)
 
 #use the trained tokenizer_code to encode and write in output_file 
 
-file_dir = "ncs_preprocessed_data/train-others/"
+file_dir = "../data/ncs_preprocessed_data/train-CoDesc/"
 src_file_name = "code.original_subtoken"
 tgt_file_name = "code.bpe"
 
@@ -31,7 +31,7 @@ output_file.close()
 
 #use the trained tokenizer_doc to encode and write in output_file 
 
-file_dir = "ncs_preprocessed_data/train-others/"
+file_dir = "../data/ncs_preprocessed_data/train-CoDesc/"
 src_file_name = "javadoc.original"
 tgt_file_name = "javadoc.bpe"
 
