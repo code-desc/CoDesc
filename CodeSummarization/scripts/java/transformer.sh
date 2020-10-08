@@ -39,7 +39,7 @@ PYTHONPATH=$SRC_DIR CUDA_VISIBLE_DEVICES=$RGPU python -W ignore ${SRC_DIR}/main/
 --use_src_char False \
 --use_tgt_word True \
 --use_tgt_char False \
---max_src_len 150 \
+--max_src_len 200 \
 --max_tgt_len 50 \
 --emsize 512 \
 --fix_embeddings False \
@@ -91,7 +91,7 @@ PYTHONPATH=$SRC_DIR CUDA_VISIBLE_DEVICES=$RGPU python -W ignore ${SRC_DIR}/main/
 --dev_src test/code.${CODE_EXTENSION} \
 --dev_tgt test/javadoc.${JAVADOC_EXTENSION} \
 --uncase True \
---max_src_len 150 \
+--max_src_len 200 \
 --max_tgt_len 50 \
 --max_examples -1 \
 --test_batch_size 64
@@ -115,7 +115,7 @@ PYTHONPATH=$SRC_DIR CUDA_VISIBLE_DEVICES=$RGPU python -W ignore ${SRC_DIR}/main/
 --dev_tgt test/javadoc.${JAVADOC_EXTENSION} \
 --uncase True \
 --max_examples -1 \
---max_src_len 150 \
+--max_src_len 200 \
 --max_tgt_len 50 \
 --test_batch_size 64 \
 --beam_size 4 \
