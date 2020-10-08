@@ -13,6 +13,10 @@ pip install numpy
 pip install jsonlines
 pip install javalang
 pip install transformers
+pip install tqdm
+pip install nltk
+pip install prettytable
+pip install torch==1.5.1
 
 # download dataset
 mkdir data/
