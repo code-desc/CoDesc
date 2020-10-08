@@ -110,7 +110,8 @@ Then the following commands will train and test code search networks:
  ```
 
 # Code Summarization
-*** complete this section ***
+We used the original implementation of Code Summarization. [NeuralCodeSum](https://github.com/wasiahmad/NeuralCodeSum.git)
+
 
 # Licenses
 Codes, dataset and models from [CodeSearchNet](https://github.com/github/CodeSearchNet.git), and [NeuralCodeSum](https://github.com/wasiahmad/NeuralCodeSum.git) are used with the licenses provided at their respective repositories.   
