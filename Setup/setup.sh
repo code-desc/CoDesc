@@ -12,6 +12,7 @@ pip install pandas
 pip install numpy
 pip install jsonlines
 pip install javalang
+pip install transformers
 
 # download dataset
 mkdir data/
