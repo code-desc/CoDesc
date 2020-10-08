@@ -79,10 +79,17 @@ The following command preprocesses CoDesc dataset for [NeuralCodeSum](https://ar
   ```bash
  python Dataset_Preparation/Preprocess_NCS.py
  ```
-
- *** add commands here for bpe ***
-
+ 
 # Tokenizer
+if huggingface tokenizer library is not installed run this command
+  ```bash
+ pip install transformers
+ ```
+ to train and create tokenized files using bpe use this command
+ ```bash
+ python Tokenizer/huggingface_bpe.py
+ ```
+
 The tokenizers for source codes and natural language descriptions are given in the `Tokenizer/` directory. To use the tokenizers in python, `code_filter` and `nl_filter` functions will have to be imported from `Tokenizer/CodePreprocess_final.py` and `Tokenizer/NLPreprocess_final.py`.  Moreover, two json files named `code_filter_flag.json` and `nl_filter_flag.json` containing the options to preprocess code and description data will have to be present in the working directory. These two files must follow the formats given the `Tokenizer/` folder. These flag options are also briefly described in the above mentioned json files.
 
 # Code Search
