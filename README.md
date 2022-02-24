@@ -1,5 +1,7 @@
 # CoDesc
 
+## This is the anonymous repository for blind review and this is no longer active. Please visit: https://github.com/csebuetnlp/CoDesc for updated code and dataset.
+
 A large dataset of 4.2m Java source code and parallel data of their description from code search, and code summarization studies.
 
 This is the public release of code, and data of our paper titled "CoDesc: Large Code-Description Parallel Dataset", submitted to ACL, 2021.
